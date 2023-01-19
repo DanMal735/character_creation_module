@@ -2,6 +2,7 @@ from random import randint
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Персонаж производит аттаку."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику '
                 f'равный {5 + randint(3, 5)}')
@@ -15,6 +16,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Персонаж защищается от аттаки."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -25,8 +27,9 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Персонаж пользуется своей суперсилой."""
     if char_class == 'warrior':
-        return (f'{char_name} применил специальное',
+        return (f'{char_name} применил специальное '
                 'умение «Выносливость {80 + 25}»')
     if char_class == 'mage':
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
@@ -36,6 +39,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Персонаж выбирает действие."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -60,6 +64,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Подтверждение выбора класса персонажа."""
     approve_choice: str = None
     char_class: str = None
     while approve_choice != 'y':
@@ -82,6 +87,7 @@ def choice_char_class() -> str:
 
 
 def main():
+    """Выбор имени и класса персонажа."""
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
